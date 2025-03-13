@@ -3,41 +3,296 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Website</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Iram Jamshed's Portfolio</title>
+    <!-- Link to Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Link to Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #3a6186;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #89253e, #3a6186);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #89253e, #3a6186); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+        .navbar {
+            background-color:background: #bdc3c7;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+;
+        }
+        .navbar-brand {
+            font-weight: bold;
+        }
+        .jumbotron {
+            background-image: url('hero-background.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #750f0f;
+        }
+        .section-title {
+            border-bottom: 3px solid #ffffff;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            color: #948e99;
+        }
+        .list-group-item {
+            border-left: 5px solid #007bff;
+            background-color: #fff;
+            margin-bottom: 10px;
+            transition: transform 0.3s;
+        }
+        .list-group-item:hover {
+            transform: translateX(10px);
+            background-color: #f8f9fa;
+        }
+        .card-title {
+            color: #007bff;
+            font-weight: bold;
+        }
+        .timeline-item {
+            border-left: 5px solid #007bff;
+            background-color: #fff;
+            margin-bottom: 20px;
+            padding-left: 20px;
+            transition: background-color 0.3s;
+        }
+        .timeline-item:hover {
+            background-color: #e9ecef;
+        }
+        .skills-icon {
+            color: #007bff;
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+        .card {
+            border: none;
+            border-top: 5px solid #007bff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        .bg-dark {
+            background-color: #343a40 !important;
+        }
+        .footer {
+            background-color: #525252;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #3d72b4, #525252);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #3d72b4, #525252); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+;
+            color: white;
+        }
+        .btn-primary {
+            background-color: #8e9eab;
+            border-color: #948e99;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Your Name</h1>
-        <p>Your profession or tagline</p>
-    </header>
-
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">Iram Jamshed</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#education">Education</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#experience">Experience</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#skills">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#awards">Awards</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
     </nav>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>A brief introduction about yourself.</p>
-    </section>
+    <!-- Hero Section -->
+    <header class="jumbotron text-center">
+        <h1 class="display-4">Welcome to my personal website.</h1>
+        <p class="lead"> Its content is a superset of my résumé, plus a sprinkle of my ✨personality✨</p>
+        <a class="btn btn-primary btn-lg" href="#projects" role="button">View My Work</a>
+    </header>
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <ul>
-            <li><a href="https://example.com/project1">Project 1</a></li>
-            <li><a href="https://example.com/project2">Project 2</a></li>
+    <!-- About Section -->
+    <section id="about" class="container py-5">
+    <h2 class="section-title">About Me</h2>
+    <p style="color: #ffffff; class="about-text">I am a Junior Research Fellow at AIIMS, New Delhi, with a strong background in Biotechnology. I have experience in molecular biology techniques, bioinformatics, and cardiovascular research.</p>
+</section>
+
+
+       <!-- My Research Section -->
+    <section id="research" class="container py-5">
+        <h2 class="section-title">My Research</h2>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <h4>AIIMS Project: Cardiovascular Research</h4>
+                <p>Research on arterial stiffness, serum biomarkers, and endothelial function in coronary artery disease.</p>
+                <a href="aiims-project.html" class="btn btn-primary">View in detail</a>
+            </li>
+            <li class="list-group-item">
+                <h4>Master's Dissertation: Glutaric Aciduria Type 1</h4>
+                <p>Clinical and molecular investigation of three Glutaric Aciduria-I patients from Indian ethnicity.</p>
+                <a href="masters-dissertation.html" class="btn btn-primary">View in detail</a>
+            </li>
+            <li class="list-group-item">
+                <h4>Open-Source Project: Bioinformatics Tool</h4>
+                <p>Contribution to an open-source bioinformatics tool.</p>
+                <a href="open-source-project.html" class="btn btn-primary">View in detail</a>
+            </li>
         </ul>
     </section>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+
+    <!-- Education Section -->
+      <!-- CSS for specific card -->
+<style>
+.my-custom-card {
+    background-color: #b993d6;
+    color: #000;
+    border-color: #f08080;
+}
+</style>
+
+    <section id="education" class="container py-5">
+        <h2 class="section-title">Education</h2>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <h5>M.Sc Biotechnology</h5>
+                <p>Madurai Kamaraj University, GPA: 8.35 | Aug 2020 – Jul 2022</p>
+            </li>
+            <li class="list-group-item">
+                <h5>B.Sc Biotechnology</h5>
+                <p>Jamia Millia Islamia, GPA: 9.31 | Jul 2017 – Oct 2020</p>
+            </li>
+            <li class="list-group-item">
+                <h5>Intermediate (10+2)</h5>
+                <p>Aligarh Muslim University | Jul 2015</p>
+            </li>
+            <li class="list-group-item">
+                <h5>Senior Secondary (10th)</h5>
+                <p>Aligarh Muslim University | Jul 2013</p>
+            </li>
+        </ul>
     </section>
 
-    <script src="js/scripts.js"></script>
+    <!-- Experience Section -->
+    <section id="experience" class="container py-5">
+        <h2 class="section-title">Professional Experience</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h5>Junior Research Fellow, AIIMS, New Delhi</h5>
+                <p>Feb 2023 – Present</p>
+                <p>Conducted research on cardiovascular diseases, focusing on arterial stiffness, serum biomarkers, and endothelial function.</p>
+            </div>
+            <div class="timeline-item">
+                <h5>Intern, SERB Sponsored Training and Skill Internship Programme</h5>
+                <p>Jun 2021 – Jul 2021</p>
+                <p>Completed training in nanotechnology techniques and applications.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="container py-5">
+        <h2 class="section-title">Skills</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <ul class="list-group">
+                    <li class="list-group-item"><i class="fas fa-dna skills-icon"></i>Molecular Cloning</li>
+                    <li class="list-group-item"><i class="fas fa-vial skills-icon"></i>PCR Amplification</li>
+                    <li class="list-group-item"><i class="fas fa-microscope skills-icon"></i>Site Directed Mutagenesis</li>
+                    <li class="list-group-item"><i class="fas fa-flask skills-icon"></i>DNA/RNA Extraction</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <ul class="list-group">
+                    <li class="list-group-item"><i class="fas fa-laptop-code skills-icon"></i>Bioinformatics Tools (NCBI, PyMOL)</li>
+                    <li class="list-group-item"><i class="fas fa-brain skills-icon"></i>Machine Learning (R, Python)</li>
+                    <li class="list-group-item"><i class="fas fa-chart-line skills-icon"></i>Data Analysis (Pandas, Numpy)</li>
+                    <li class="list-group-item"><i class="fas fa-project-diagram skills-icon"></i>Flow Cytometry</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="container py-5">
+        <h2 class="section-title">My Projects</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <img src="artsens.jpg" class="card-img-top" alt="ARTSENS® Age Project">
+                    <div class="card-body">
+                        <h5 class="card-title">ARTSENS® Age Project</h5>
+                        <p class="card-text">Assessed endothelial function and arterial stiffness in patients with coronary artery disease using ARTSENS® technology.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <img src="glutaric_aciduria.jpg" class="card-img-top" alt="Glutaric Aciduria Project">
+                    <div class="card-body">
+                        <h5 class="card-title">Glutaric Aciduria Project</h5>
+                        <p class="card-text">Investigated the molecular mechanisms of Glutaric Aciduria Type-1 in Indian patients, including gene sequencing and mutation analysis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section id="awards" class="container py-5">
+        <h2 class="section-title">Awards</h2>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <h5>Prof NS DHALLA AWARD</h5>
+                <p>Presented a poster at the International conference (ISHR) at AIIMS Jodhpur, India | Feb 2024</p>
+            </li>
+            <li class="list-group-item">
+                <h5>Merit Cum Scholarship</h5>
+                <p>Awarded for II Rank holder during Masters | Jun 2022</p>
+            </li>
+            <li class="list-group-item">
+                <h5>DBT Fellowship</h5>
+                <p>Department of Biotechnology Fellowship for Post Graduation Programme | Jun 2020</p>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container py-5">
+        <h2 class="section-title">Contact Me</h2>
+        <p>You can reach out to me via email at <a href="mailto:iram176310@st.jmi.ac.in">iram176310@st.jmi.ac.in</a> or call me at +91-8448662595.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer text-white text-center py-3">
+        <p>© 2024 Iram Jamshed. All rights reserved.</p>
+    </footer>
+
+    <!-- Link to Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

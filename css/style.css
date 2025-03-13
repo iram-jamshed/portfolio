@@ -1,40 +1,23 @@
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
-
-header {
-    background-color: #333;
-    color: white;
-    padding: 1rem 0;
-    text-align: center;
-}
-
-nav ul {
-    list-style: none;
-    background-color: #444;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 1rem;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-section {
-    padding: 2rem;
-    background-color: white;
-    margin: 1rem 0;
-}
-
-section h2 {
+    font-family: 'Arial', sans-serif;
     color: #333;
+    background-color: #f8f9fa;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.jumbotron {
+    background-image: url('header-background.jpg');
+    background-size: cover;
+    color: white;
+}
+
+.card-title {
+    color: #b993d6;
+}
+
+footer {
+    background-color: #343a40;
 }
