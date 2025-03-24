@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iram Jamshed's Portfolio</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Animate on Scroll (AOS) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+     
+    <style>
+
+      
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+        .navbar {
+           background: #bdc3c7;  /* fallback for old browsers */
+           background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+           background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar-brand {
+            font-weight: bold;
+            color: #ffffff !important;
+        }
+        .nav-link {
+            color: #ffffff !important;
+            transition: color 0.3s;
+        }
+        .nav-link:hover {
+            color: #BBD2C5 !important;
+        }
+        .jumbotron {
+            background: linear-gradient(135deg, #89253e, #3a6186);
+            color: #ffffff;
+            padding: 150px 0;
+            text-align: center;
+        }
+        .section-title {
+            border-bottom: 3px solid #BBD2C5;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            color: #ffffff;
+        }
+        .list-group-item {
+            background-color: #2a2a2a;
+            border: none;
+            color: #ffffff;
+            margin-bottom: 10px;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        .list-group-item:hover {
+            transform: translateX(10px);
+            background-color: #BBD2C5;
+        }
+        .card {
+            background-color: #2a2a2a;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        .card-title {
+            color: #BBD2C5;
+            font-weight: bold;
+        }
+        .btn-primary {
+            background-color: #667db6;
+            border: none;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+        .photography-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        .photography-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .photography-item img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        .footer {
+            background: #1a1a1a;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .social-links a {
+            color: #667db6;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        .social-links a:hover {
+            color: #0056b3 ;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">Iram Jamshed</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#research">Research</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#education">Education</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#skills">Skills</a>
+                </li>
+                   <li class="nav-item">
+                    <a class="nav-link" href="#awards">Awards</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#photography">Photography</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="jumbotron" data-aos="fade-down">
+        <h1 class="display-4">Welcome to my personal website.</h1>
+        <p class="lead">Its content is a superset of my resume, plus a sprinkle of my ✨personality✨</p>
+        <a class="btn btn-primary btn-lg" href="#skills" role="button">View My Skills</a>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="container py-5" data-aos="fade-up">
+        <h2 class="section-title">About Me</h2>
+        <p class="about-text">(not just) a scientist – fascinated by genetics, disease mechanisms, and bioinformatics</p>
+        <p class="about-text">spends days decoding DNA, nights watching anime, sci-fi(sometimes all in one sitting)</p>
+        <p class="about-text">travels to new places, captures moments through a lens, and enjoys life one step at a time</p>
+        <p class="about-text">obsessed with science, technology and how biology shapes everything around us</p>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="container py-5" data-aos="fade-up">
+        <h2 class="section-title">My Research</h2>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <h4>Project Scientist-I: ML in Healthcare</h4>
+                <p>Creation of machine learning model based on correlation of various imaging biomarkers with various grades of coronary calcium score</p>
+                <a href="aiims-project.html" class="btn btn-primary">View in detail</a>
+            </li>
+            <li class="list-group-item">
+                <h4>Junior Reseach Fellow: Cardiovascular Disorders</h4>
+                <p>Assessed arterial stiffness, serum biomarkers, and endothelial function in coronary artery disease</p>
+                <a href="aiims-project.html" class="btn btn-primary">View in detail</a>
+            </li>
+            <li class="list-group-item">
+                <h4>Master's Dissertation: Neurodegenerative rare disorders</h4>
+                <p>Clinical and molecular investigation of three Glutaric Aciduria-I patients from Indian ethnicity</p>
+                <a href="masters-dissertation.html" class="btn btn-primary">View in detail</a>
+            </li>
+            <li class="list-group-item">
+                <h4>Open-Source Project: Bugsib DB</h4>
+                <p>Gut microbiome and atrial fibrillation results from a large population based study</p>
+                <a href="open-source-project.html" class="btn btn-primary">View in detail</a>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="container py-5" data-aos="fade-up">
+        <h2 class="section-title">Education</h2>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <h5>M.Sc Biotechnology</h5>
+                <p>Madurai Kamaraj University, GPA: 8.35 | Aug 2020 – Jul 2022</p>
+            </li>
+            <li class="list-group-item">
+                <h5>B.Sc Biotechnology</h5>
+                <p>Jamia Millia Islamia, GPA: 9.31 | Jul 2017 – Oct 2020</p>
+            </li>
+            <li class="list-group-item">
+                <h5>Intermediate (10+2)</h5>
+                <p>Aligarh Muslim University</p>
+            </li>
+            <li class="list-group-item">
+                <h5>Senior Secondary (10th)</h5>
+                <p>Aligarh Muslim University</p>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="container py-5" data-aos="fade-up" style="scroll-margin-top: 100px; padding-bottom: 100px;">
+    <h2 class="section-title">Skills</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <ul class="list-group">
+                <li class="list-group-item"><i class="fas fa-dna skills-icon"></i> Molecular Cloning, Cell Culture</li>
+                <li class="list-group-item"><i class="fas fa-vial skills-icon"></i> DNA/RNA Extraction, PCR Amplification</li>
+                <li class="list-group-item"><i class="fas fa-microscope skills-icon"></i> Site Directed Mutagenesis</li>
+                <li class="list-group-item"><i class="fas fa-flask skills-icon"></i> Mass spectrophotometry, SDS PAGE</li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <ul class="list-group">
+                <li class="list-group-item"><i class="fas fa-laptop-code skills-icon"></i> Bioinformatics Tools (NCBI, PyMOL)</li>
+                <li class="list-group-item"><i class="fas fa-brain skills-icon"></i> Machine Learning</li>
+                <li class="list-group-item"><i class="fas fa-chart-line skills-icon"></i> Data Analysis (R, Python, Pandas, Numpy)</li>
+                <li class="list-group-item"><i class="fas fa-project-diagram skills-icon"></i> Flow Cytometry, Fluorescence Microscopy</li>
+            </ul>
+        </div>
+    </div>
+</section>    
+    <!-- Awards Section -->
+    <section id="awards" class="container py-5" data-aos="fade-up">
+        <h2 class="section-title">Awards</h2>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <h5>Prof NS DHALLA AWARD</h5>
+                <p>Presented a poster at the International conference (ISHR) at AIIMS Jodhpur, India | Feb 2024</p>
+            </li>
+            <li class="list-group-item">
+                <h5>Merit Cum Scholarship</h5>
+                <p>Awarded for II Rank holder during Masters | Jun 2022</p>
+            </li>
+            <li class="list-group-item">
+                <h5>DBT Fellowship</h5>
+                <p>Department of Biotechnology Fellowship for Post Graduation Programme | Jun 2020</p>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Photography Section -->
+    <section id="photography" class="container py-5" data-aos="fade-up">
+        <h2 class="section-title">Photography</h2>
+        <div class="photography-grid">
+            <div class="photography-item">
+                <img src="images/IMG_3393.jpg" alt="Description of Photo 1">
+            </div>
+            <div class="photography-item">
+                <img src="images/IMG_3738.jpg" alt="Description of Photo 2">
+            </div>
+            <div class="photography-item">
+                <img src="images/IMG_3782.jpg" alt="Description of Photo 3">
+            </div>
+            <div class="photography-item">
+                <img src="images/IMG_4828.jpg" alt="Description of Photo 4">
+            </div>
+            <div class="photography-item">
+                <img src="images/IMG_5776.jpg" alt="Description of Photo 5">
+            </div>
+            <div class="photography-item">
+                <img src="images/IMG_6250.jpg" alt="Description of Photo 6">
+            </div>
+            <div class="photography-item">
+                <img src="images/IMG_6496.jpg" alt="Description of Photo 7">
+            </div>
+            <div class="photography-item">
+                <img src="images/IMG_6938.jpg" alt="Description of Photo 8">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container py-5" data-aos="fade-up">
+        <h2 class="section-title">Contact</h2>
+        <p>You can reach out to me via email at <a href="mailto:sci.iramm@gmail.com">sci.iramm@gmail.com</a></p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="social-links">
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/yourprofile" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="mailto:sci.iramm@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p>© 2024 Iram Jamshed. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS and Dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Animate on Scroll (AOS) -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</body>
+</html>

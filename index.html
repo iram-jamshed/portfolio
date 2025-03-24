@@ -1,326 +1,934 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Iram Jamshed's Portfolio</title>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
     <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <!-- Animate on Scroll (AOS) -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
-
-     
+    <link rel="stylesheet" href="style.css" />
+    <!-- Typed.js CSS (Optional: for styling the typing cursor) -->
     <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #1a1a1a;
+        color: #ffffff;
+      }
+      .navbar {
+        background: linear-gradient(to right, #2c3e50, #bdc3c7);
+        backdrop-filter: blur(10px);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+      .navbar-brand {
+        font-weight: bold;
+        color: #ffffff !important;
+      }
+      .nav-link {
+        color: #ffffff !important;
+        transition: color 0.3s;
+      }
+      .nav-link:hover {
+        color: #bbd2c5 !important;
+      }
+      .jumbotron {
+        background: linear-gradient(135deg, #89253e, #3a6186);
+        color: #ffffff;
+        padding: 150px 0;
+        text-align: center;
+        overflow: hidden;
+        position: relative;
+      }
+      /* Animated Typing Text Style */
+      .typed-cursor {
+        font-size: 2rem;
+        opacity: 1;
+        animation: blink 0.7s infinite;
+      }
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+      }
+      /* Additional Fade-in Animation */
+      .fadeInUp {
+        animation: fadeInUp 1s ease-out both;
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .section-title {
+        border-bottom: 3px solid #bbd2c5;
+        padding-bottom: 10px;
+        margin-bottom: 30px;
+        color: #ffffff;
+      }
+      .list-group-item {
+        background-color: #2a2a2a;
+        border: none;
+        color: #ffffff;
+        margin-bottom: 10px;
+        transition: transform 0.3s, background-color 0.3s;
+      }
+      .list-group-item:hover {
+        transform: translateX(10px);
+        background-color: #bbd2c5;
+      }
+      .card {
+        background-color: #2a2a2a;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+      .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      }
+      .card-title {
+        color: #bbd2c5;
+        font-weight: bold;
+      }
+      .btn-primary {
+        background-color: #667db6;
+        border: none;
+        transition: background-color 0.3s, transform 0.3s;
+      }
+      .btn-primary:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+      }
+      .photography-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+      }
+      .photography-item img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+      .photography-item img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      }
+      .footer {
+        background: #1a1a1a;
+        color: #ffffff;
+        padding: 20px 0;
+        text-align: center;
+      }
+      .social-links a {
+        color: #667db6;
+        margin: 0 10px;
+        font-size: 1.5rem;
+        transition: color 0.3s;
+      }
+      .social-links a:hover {
+        color: #0056b3;
+      }
+      .animated-bg {
+        position: relative;
+        overflow: hidden;
+        /* Create a multi-color gradient */
+        background: linear-gradient(-45deg, #89253e, #3a6186, #bdc3c7, #2c3e50);
+        background-size: 400% 400%;
+        animation: gradientAnimation 15s ease infinite;
+      }
 
-      
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #1a1a1a;
-            color: #ffffff;
+      @keyframes gradientAnimation {
+        0% {
+          background-position: 0% 50%;
         }
-        .navbar {
-           background: #bdc3c7;  /* fallback for old browsers */
-           background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
-           background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+        50% {
+          background-position: 100% 50%;
         }
-        .navbar-brand {
-            font-weight: bold;
-            color: #ffffff !important;
+        100% {
+          background-position: 0% 50%;
         }
-        .nav-link {
-            color: #ffffff !important;
-            transition: color 0.3s;
+      }
+
+      /* Overlay to darken the background for readability */
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+      }
+
+      /* Ensure the container is above the overlay */
+      .animated-bg .container {
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Optional fade-in animation for container */
+      .fadeInUp {
+        animation: fadeInUp 1s ease-out both;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
         }
-        .nav-link:hover {
-            color: #BBD2C5 !important;
+        to {
+          opacity: 1;
+          transform: translateY(0);
         }
-        .jumbotron {
-            background: linear-gradient(135deg, #89253e, #3a6186);
-            color: #ffffff;
-            padding: 150px 0;
-            text-align: center;
+      }
+
+      /* Typed.js cursor style */
+      .typed-cursor {
+        font-size: 2rem;
+        opacity: 1;
+        animation: blink 0.7s infinite;
+      }
+
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
         }
-        .section-title {
-            border-bottom: 3px solid #BBD2C5;
-            padding-bottom: 10px;
-            margin-bottom: 30px;
-            color: #ffffff;
+        50% {
+          opacity: 0;
         }
-        .list-group-item {
-            background-color: #2a2a2a;
-            border: none;
-            color: #ffffff;
-            margin-bottom: 10px;
-            transition: transform 0.3s, background-color 0.3s;
+      }
+
+      /* Contact Section Styles */
+      #contact {
+        background: #2a2a2a;
+        border-radius: 10px;
+        padding: 40px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+      }
+
+      #contact .section-title {
+        margin-bottom: 30px;
+      }
+
+      /* Flex container for layout */
+      .contact-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+      }
+
+      /* Contact Info styling */
+      .contact-info {
+        flex: 1 1 300px;
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 10px;
+        text-align: center;
+      }
+
+      .contact-info .intro-text {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+      }
+
+      .contact-info .contact-email a {
+        color: #bbd2c5;
+        font-weight: bold;
+        text-decoration: none;
+      }
+
+      .contact-info .contact-email a:hover {
+        text-decoration: underline;
+      }
+
+      /* Contact Form styling */
+      .contact-form {
+        flex: 1 1 300px;
+        background: #1a1a1a;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .contact-form .form-control {
+        background: #333;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        margin-bottom: 15px;
+        padding: 12px 15px;
+        font-size: 1rem;
+      }
+
+      .contact-form .form-control::placeholder {
+        color: #ccc;
+      }
+
+      .contact-form .form-control:focus {
+        outline: none;
+        box-shadow: 0 0 5px rgba(187, 210, 197, 0.8);
+      }
+
+      .contact-form button.btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 1.1rem;
+        background-color: #667db6;
+        border: none;
+        border-radius: 5px;
+        transition: background-color 0.3s, transform 0.3s;
+      }
+
+      .contact-form button.btn:hover {
+        background-color: #0056b3;
+        transform: translateY(-3px);
+      }
+
+      .footer {
+        background: #1a1a1a;
+        color: #ffffff;
+        padding: 20px 0;
+        text-align: center;
+        position: relative;
+      }
+
+      .social-links a {
+        color: #667db6;
+        margin: 0 10px;
+        font-size: 1.5rem;
+        transition: color 0.3s;
+      }
+
+      .social-links a:hover {
+        color: #0056b3;
+      }
+
+      /* New Styles for the Logos */
+      .logos-container {
+        margin: 20px 0;
+        text-align: center;
+      }
+
+      .affiliation-logos {
+        max-height: 30px; /* Reduced from 60px to 40px */
+        height: auto;
+        object-fit: contain;
+        opacity: 0.8; /* Slight transparency to blend with footer */
+        transition: opacity 0.3s;
+      }
+
+      .affiliation-logos:hover {
+        opacity: 1; /* Full opacity on hover */
+      }
+
+      /* Photography Grid styling */
+      .photography-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+      }
+
+      .photography-item img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+        transition: transform 0.3s, box-shadow 0.3s;
+        cursor: pointer;
+      }
+
+      .photography-item img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Modal Styles */
+      .photo-modal {
+        display: none; /* Hidden by default */
+        position: fixed;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.9);
+        animation: fadeInModal 0.5s ease;
+      }
+
+      @keyframes fadeInModal {
+        from {
+          opacity: 0;
         }
-        .list-group-item:hover {
-            transform: translateX(10px);
-            background-color: #BBD2C5;
+        to {
+          opacity: 1;
         }
-        .card {
-            background-color: #2a2a2a;
-            border: none;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .modal-content {
+        margin: 5% auto;
+        display: block;
+        width: auto;
+        max-width: 70%;
+        max-height: 70%;
+        object-fit: contain;
+        border-radius: 10px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        animation: zoomIn 0.5s ease;
+      }
+
+      @keyframes zoomIn {
+        from {
+          transform: scale(0.8);
+          opacity: 0;
         }
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        to {
+          transform: scale(1);
+          opacity: 1;
         }
-        .card-title {
-            color: #BBD2C5;
-            font-weight: bold;
-        }
-        .btn-primary {
-            background-color: #667db6;
-            border: none;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-        .btn-primary:hover {
-            background-color: #0056b3;
-            transform: scale(1.05);
-        }
-        .photography-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-        }
-        .photography-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .photography-item img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-        }
-        .footer {
-            background: #1a1a1a;
-            color: #ffffff;
-            padding: 20px 0;
-            text-align: center;
-        }
-        .social-links a {
-            color: #667db6;
-            margin: 0 10px;
-            font-size: 1.5rem;
-            transition: color 0.3s;
-        }
-        .social-links a:hover {
-            color: #0056b3 ;
-        }
+      }
+
+      /* Caption text */
+      #caption {
+        margin: 20px auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+        text-align: center;
+        color: #ccc;
+        padding: 10px 0;
+      }
+
+      /* Close button */
+      .close {
+        position: absolute;
+        top: 20px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: color 0.3s;
+        cursor: pointer;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #bbb;
+        text-decoration: none;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
-        <a class="navbar-brand" href="#">Iram Jamshed</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#about">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#research">Research</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#education">Education</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#skills">Skills</a>
-                </li>
-                   <li class="nav-item">
-                    <a class="nav-link" href="#awards">Awards</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#photography">Photography</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contact</a>
-                </li>
-            </ul>
-        </div>
+      <a class="navbar-brand" href="#">Iram Jamshed</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#research">Research</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#education">Education</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#skills">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#awards">Awards</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#photography">Photography</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="jumbotron" data-aos="fade-down">
+    <!-- Hero Section with Animated Background and Typed Text -->
+    <header class="jumbotron animated-bg" data-aos="fade-down">
+      <!-- Background overlay for better text readability -->
+      <div class="overlay"></div>
+      <div class="container fadeInUp">
         <h1 class="display-4">Welcome to my personal website.</h1>
-        <p class="lead">Its content is a superset of my resume, plus a sprinkle of my ✨personality✨</p>
-        <a class="btn btn-primary btn-lg" href="#skills" role="button">View My Skills</a>
+        <p class="lead">
+          <span id="typed"></span>
+        </p>
+        <a class="btn btn-primary btn-lg" href="#skills" role="button"
+          >View My Skills</a
+        >
+      </div>
     </header>
 
     <!-- About Section -->
     <section id="about" class="container py-5" data-aos="fade-up">
-        <h2 class="section-title">About Me</h2>
-        <p class="about-text">(not just) a scientist – fascinated by genetics, disease mechanisms, and bioinformatics</p>
-        <p class="about-text">spends days decoding DNA, nights watching anime, sci-fi(sometimes all in one sitting)</p>
-        <p class="about-text">travels to new places, captures moments through a lens, and enjoys life one step at a time</p>
-        <p class="about-text">obsessed with science, technology and how biology shapes everything around us</p>
+      <h2 class="section-title">About Me</h2>
+      <p class="about-text">
+        (not just) a scientist – fascinated by genetics, disease mechanisms, and
+        bioinformatics
+      </p>
+      <p class="about-text">
+        spends days decoding DNA, nights watching anime, sci-fi (sometimes all
+        in one sitting)
+      </p>
+      <p class="about-text">
+        travels to new places, captures moments through a lens, and enjoys life
+        one step at a time
+      </p>
+      <p class="about-text">
+        obsessed with science, technology and how biology shapes everything
+        around us
+      </p>
     </section>
 
     <!-- Research Section -->
     <section id="research" class="container py-5" data-aos="fade-up">
-        <h2 class="section-title">My Research</h2>
-        <ul class="list-group">
-            <li class="list-group-item">
-                <h4>Project Scientist-I: ML in Healthcare</h4>
-                <p>Creation of machine learning model based on correlation of various imaging biomarkers with various grades of coronary calcium score</p>
-                <a href="aiims-project.html" class="btn btn-primary">View in detail</a>
-            </li>
-            <li class="list-group-item">
-                <h4>Junior Reseach Fellow: Cardiovascular Disorders</h4>
-                <p>Assessed arterial stiffness, serum biomarkers, and endothelial function in coronary artery disease</p>
-                <a href="aiims-project.html" class="btn btn-primary">View in detail</a>
-            </li>
-            <li class="list-group-item">
-                <h4>Master's Dissertation: Neurodegenerative rare disorders</h4>
-                <p>Clinical and molecular investigation of three Glutaric Aciduria-I patients from Indian ethnicity</p>
-                <a href="masters-dissertation.html" class="btn btn-primary">View in detail</a>
-            </li>
-            <li class="list-group-item">
-                <h4>Open-Source Project: Bugsib DB</h4>
-                <p>Gut microbiome and atrial fibrillation results from a large population based study</p>
-                <a href="open-source-project.html" class="btn btn-primary">View in detail</a>
-            </li>
-        </ul>
+      <h2 class="section-title">My Research</h2>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <h4>Project Scientist-I: ML in Healthcare</h4>
+          <p>
+            Creation of machine learning model based on correlation of various
+            imaging biomarkers with various grades of coronary calcium score
+          </p>
+          <a href="aiims-project.html" class="btn btn-primary"
+            >View in detail</a
+          >
+        </li>
+        <li class="list-group-item">
+          <h4>Junior Research Fellow: Cardiovascular Disorders</h4>
+          <p>
+            Assessed arterial stiffness, serum biomarkers, and endothelial
+            function in coronary artery disease
+          </p>
+          <a href="cardio-research.html" class="btn btn-primary"
+            >View in detail</a
+          >
+        </li>
+        <li class="list-group-item">
+          <h4>Master's Dissertation: Neurodegenerative Rare Disorders</h4>
+          <p>
+            Clinical and molecular investigation of three Glutaric Aciduria-I
+            patients from Indian ethnicity
+          </p>
+          <a href="masters-dissertation.html" class="btn btn-primary"
+            >View in detail</a
+          >
+        </li>
+        <li class="list-group-item">
+          <h4>Open-Source Project: Bugsib DB</h4>
+          <p>
+            Gut microbiome and atrial fibrillation results from a large
+            population based study
+          </p>
+          <a href="open-source-project.html" class="btn btn-primary"
+            >View in detail</a
+          >
+        </li>
+      </ul>
     </section>
 
     <!-- Education Section -->
     <section id="education" class="container py-5" data-aos="fade-up">
-        <h2 class="section-title">Education</h2>
-        <ul class="list-group">
-            <li class="list-group-item">
-                <h5>M.Sc Biotechnology</h5>
-                <p>Madurai Kamaraj University, GPA: 8.35 | Aug 2020 – Jul 2022</p>
-            </li>
-            <li class="list-group-item">
-                <h5>B.Sc Biotechnology</h5>
-                <p>Jamia Millia Islamia, GPA: 9.31 | Jul 2017 – Oct 2020</p>
-            </li>
-            <li class="list-group-item">
-                <h5>Intermediate (10+2)</h5>
-                <p>Aligarh Muslim University</p>
-            </li>
-            <li class="list-group-item">
-                <h5>Senior Secondary (10th)</h5>
-                <p>Aligarh Muslim University</p>
-            </li>
-        </ul>
+      <h2 class="section-title">Education</h2>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <h5>M.Sc Biotechnology</h5>
+          <p>Madurai Kamaraj University, GPA: 8.35 | Aug 2020 – Jul 2022</p>
+        </li>
+        <li class="list-group-item">
+          <h5>B.Sc Biotechnology</h5>
+          <p>Jamia Millia Islamia, GPA: 9.31 | Jul 2017 – Oct 2020</p>
+        </li>
+        <li class="list-group-item">
+          <h5>Intermediate (10+2)</h5>
+          <p>Aligarh Muslim University</p>
+        </li>
+        <li class="list-group-item">
+          <h5>Senior Secondary (10th)</h5>
+          <p>Aligarh Muslim University</p>
+        </li>
+      </ul>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="container py-5" data-aos="fade-up" style="scroll-margin-top: 100px; padding-bottom: 100px;">
-    <h2 class="section-title">Skills</h2>
-    <div class="row">
+    <section
+      id="skills"
+      class="container py-5"
+      data-aos="fade-up"
+      style="scroll-margin-top: 100px; padding-bottom: 100px"
+    >
+      <h2 class="section-title">Skills</h2>
+      <div class="row">
         <div class="col-md-6">
-            <ul class="list-group">
-                <li class="list-group-item"><i class="fas fa-dna skills-icon"></i> Molecular Cloning, Cell Culture</li>
-                <li class="list-group-item"><i class="fas fa-vial skills-icon"></i> DNA/RNA Extraction, PCR Amplification</li>
-                <li class="list-group-item"><i class="fas fa-microscope skills-icon"></i> Site Directed Mutagenesis</li>
-                <li class="list-group-item"><i class="fas fa-flask skills-icon"></i> Mass spectrophotometry, SDS PAGE</li>
-            </ul>
+          <ul class="list-group">
+            <li class="list-group-item">
+              <i class="fas fa-dna skills-icon"></i> Molecular Cloning, Cell
+              Culture
+            </li>
+            <li class="list-group-item">
+              <i class="fas fa-vial skills-icon"></i> DNA/RNA Extraction, PCR
+              Amplification
+            </li>
+            <li class="list-group-item">
+              <i class="fas fa-microscope skills-icon"></i> Site Directed
+              Mutagenesis
+            </li>
+            <li class="list-group-item">
+              <i class="fas fa-flask skills-icon"></i> Mass spectrophotometry,
+              SDS PAGE
+            </li>
+          </ul>
         </div>
         <div class="col-md-6">
-            <ul class="list-group">
-                <li class="list-group-item"><i class="fas fa-laptop-code skills-icon"></i> Bioinformatics Tools (NCBI, PyMOL)</li>
-                <li class="list-group-item"><i class="fas fa-brain skills-icon"></i> Machine Learning</li>
-                <li class="list-group-item"><i class="fas fa-chart-line skills-icon"></i> Data Analysis (R, Python, Pandas, Numpy)</li>
-                <li class="list-group-item"><i class="fas fa-project-diagram skills-icon"></i> Flow Cytometry, Fluorescence Microscopy</li>
-            </ul>
+          <ul class="list-group">
+            <li class="list-group-item">
+              <i class="fas fa-laptop-code skills-icon"></i> Bioinformatics
+              Tools (NCBI, PyMOL)
+            </li>
+            <li class="list-group-item">
+              <i class="fas fa-brain skills-icon"></i> Machine Learning
+            </li>
+            <li class="list-group-item">
+              <i class="fas fa-chart-line skills-icon"></i> Data Analysis (R,
+              Python, Pandas, Numpy)
+            </li>
+            <li class="list-group-item">
+              <i class="fas fa-project-diagram skills-icon"></i> Flow Cytometry,
+              Fluorescence Microscopy
+            </li>
+          </ul>
         </div>
-    </div>
-</section>    
-    <!-- Awards Section -->
-    <section id="awards" class="container py-5" data-aos="fade-up">
-        <h2 class="section-title">Awards</h2>
-        <ul class="list-group">
-            <li class="list-group-item">
-                <h5>Prof NS DHALLA AWARD</h5>
-                <p>Presented a poster at the International conference (ISHR) at AIIMS Jodhpur, India | Feb 2024</p>
-            </li>
-            <li class="list-group-item">
-                <h5>Merit Cum Scholarship</h5>
-                <p>Awarded for II Rank holder during Masters | Jun 2022</p>
-            </li>
-            <li class="list-group-item">
-                <h5>DBT Fellowship</h5>
-                <p>Department of Biotechnology Fellowship for Post Graduation Programme | Jun 2020</p>
-            </li>
-        </ul>
+      </div>
     </section>
 
+    <!-- Awards Section -->
+    <section id="awards" class="container py-5" data-aos="fade-up">
+      <h2 class="section-title">Awards</h2>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <h5>Prof NS DHALLA AWARD</h5>
+          <p>
+            Presented a poster at the International conference (ISHR) at AIIMS
+            Jodhpur, India | Feb 2024
+          </p>
+        </li>
+        <li class="list-group-item">
+          <h5>Merit Cum Scholarship</h5>
+          <p>Awarded for II Rank holder during Masters | Jun 2022</p>
+        </li>
+        <li class="list-group-item">
+          <h5>DBT Fellowship</h5>
+          <p>
+            Department of Biotechnology Fellowship for Post Graduation Programme
+            | Jun 2020
+          </p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Photography Section
+    <section id="photography" class="container py-5" data-aos="fade-up">
+      <h2 class="section-title">Photography</h2>
+      <div class="photography-grid">
+        <div class="photography-item">
+          <img src="images/IMG_3393.jpg" alt="Description of Photo 1" />
+        </div>
+        <div class="photography-item">
+          <img src="images/IMG_3738.jpg" alt="Description of Photo 2" />
+        </div>
+        <div class="photography-item">
+          <img src="images/IMG_3782.jpg" alt="Description of Photo 3" />
+        </div>
+        <div class="photography-item">
+          <img src="images/IMG_4828.jpg" alt="Description of Photo 4" />
+        </div>
+        <div class="photography-item">
+          <img src="images/IMG_5776.jpg" alt="Description of Photo 5" />
+        </div>
+        <div class="photography-item">
+          <img src="images/IMG_6250.jpg" alt="Description of Photo 6" />
+        </div>
+        <div class="photography-item">
+          <img src="images/IMG_6496.jpg" alt="Description of Photo 7" />
+        </div>
+        <div class="photography-item">
+          <img src="images/IMG_6938.jpg" alt="Description of Photo 8" />
+        </div>
+      </div>
+    </section> -->
     <!-- Photography Section -->
     <section id="photography" class="container py-5" data-aos="fade-up">
-        <h2 class="section-title">Photography</h2>
-        <div class="photography-grid">
-            <div class="photography-item">
-                <img src="images/IMG_3393.jpg" alt="Description of Photo 1">
-            </div>
-            <div class="photography-item">
-                <img src="images/IMG_3738.jpg" alt="Description of Photo 2">
-            </div>
-            <div class="photography-item">
-                <img src="images/IMG_3782.jpg" alt="Description of Photo 3">
-            </div>
-            <div class="photography-item">
-                <img src="images/IMG_4828.jpg" alt="Description of Photo 4">
-            </div>
-            <div class="photography-item">
-                <img src="images/IMG_5776.jpg" alt="Description of Photo 5">
-            </div>
-            <div class="photography-item">
-                <img src="images/IMG_6250.jpg" alt="Description of Photo 6">
-            </div>
-            <div class="photography-item">
-                <img src="images/IMG_6496.jpg" alt="Description of Photo 7">
-            </div>
-            <div class="photography-item">
-                <img src="images/IMG_6938.jpg" alt="Description of Photo 8">
-            </div>
+      <h2 class="section-title">Photography</h2>
+      <div class="photography-grid">
+        <div class="photography-item">
+          <img
+            src="images/IMG_3393.jpg"
+            alt="Description of Photo 1"
+            class="photo"
+          />
         </div>
+        <div class="photography-item">
+          <img
+            src="images/IMG_3738.jpg"
+            alt="Description of Photo 2"
+            class="photo"
+          />
+        </div>
+        <div class="photography-item">
+          <img
+            src="images/IMG_3782.jpg"
+            alt="Description of Photo 3"
+            class="photo"
+          />
+        </div>
+        <div class="photography-item">
+          <img
+            src="images/IMG_4828.jpg"
+            alt="Description of Photo 4"
+            class="photo"
+          />
+        </div>
+        <div class="photography-item">
+          <img
+            src="images/IMG_5776.jpg"
+            alt="Description of Photo 5"
+            class="photo"
+          />
+        </div>
+        <div class="photography-item">
+          <img
+            src="images/IMG_6250.jpg"
+            alt="Description of Photo 6"
+            class="photo"
+          />
+        </div>
+        <div class="photography-item">
+          <img
+            src="images/IMG_6496.jpg"
+            alt="Description of Photo 7"
+            class="photo"
+          />
+        </div>
+        <div class="photography-item">
+          <img
+            src="images/IMG_6938.jpg"
+            alt="Description of Photo 8"
+            class="photo"
+          />
+        </div>
+      </div>
     </section>
+
+    <!-- Modal for Enlarged Photo -->
+    <div id="photoModal" class="photo-modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="modalImage" />
+      <div id="caption"></div>
+    </div>
 
     <!-- Contact Section -->
     <section id="contact" class="container py-5" data-aos="fade-up">
-        <h2 class="section-title">Contact</h2>
-        <p>You can reach out to me via email at <a href="mailto:sci.iramm@gmail.com">sci.iramm@gmail.com</a></p>
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-wrapper">
+        <div class="contact-info">
+          <p class="intro-text">
+            Have any questions or ideas for collaboration?
+          </p>
+          <p class="contact-email">
+            Drop me an email at
+            <a href="mailto:sci.iramm@gmail.com">sci.iramm@gmail.com</a>
+          </p>
+        </div>
+        <form class="contact-form">
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Your Name"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="email"
+              class="form-control"
+              placeholder="Your Email"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <textarea
+              class="form-control"
+              rows="5"
+              placeholder="Your Message"
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
     </section>
+
+    <!-- Footer
+    <footer class="footer">
+      <div class="social-links">
+        <a
+          href="https://linkedin.com/in/yourprofile"
+          target="_blank"
+          aria-label="LinkedIn"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+        <a
+          href="https://github.com/yourprofile"
+          target="_blank"
+          aria-label="GitHub"
+          ><i class="fab fa-github"></i
+        ></a>
+        <a href="mailto:sci.iramm@gmail.com" aria-label="Email"
+          ><i class="fas fa-envelope"></i
+        ></a>
+      </div>
+      <p>© 2024 Iram Jamshed. All rights reserved.</p>
+    </footer> -->
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="social-links">
-            <a href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/yourprofile" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            <a href="mailto:sci.iramm@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-        </div>
-        <p>© 2024 Iram Jamshed. All rights reserved.</p>
+      <div class="social-links">
+        <a
+          href="https://linkedin.com/in/yourprofile"
+          target="_blank"
+          aria-label="LinkedIn"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+        <a
+          href="https://github.com/yourprofile"
+          target="_blank"
+          aria-label="GitHub"
+          ><i class="fab fa-github"></i
+        ></a>
+        <a href="mailto:sci.iramm@gmail.com" aria-label="Email"
+          ><i class="fas fa-envelope"></i
+        ></a>
+      </div>
+
+      <!-- Logos Container -->
+      <div class="logos-container">
+        <img
+          src="./images/logos-new2.png"
+          alt="Affiliated Institutions"
+          class="affiliation-logos"
+        />
+      </div>
+
+      <p>© 2024 Iram Jamshed. All rights reserved.</p>
     </footer>
 
-    <!-- Bootstrap JS and Dependencies -->
+    <!-- JS Dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Animate on Scroll (AOS) -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Typed.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script>
-        AOS.init();
+      // Initialize AOS for scroll animations
+      AOS.init();
+
+      // Initialize Typed.js for animated typing effect
+      var typed = new Typed("#typed", {
+        strings: [
+          "A scientist with a passion for innovation.",
+          "A bioinformatics enthusiast.",
+          "A creative problem-solver.",
+        ],
+        typeSpeed: 60,
+        backSpeed: 40,
+        loop: true,
+      });
+
+      // Get modal element
+      var modal = document.getElementById("photoModal");
+
+      // Get modal image and caption
+      var modalImg = document.getElementById("modalImage");
+      var captionText = document.getElementById("caption");
+
+      // Get all images with class 'photo'
+      var photos = document.querySelectorAll(".photo");
+
+      // Loop through images and add click event listener
+      photos.forEach(function (photo) {
+        photo.addEventListener("click", function () {
+          modal.style.display = "block";
+          modalImg.src = this.src;
+          captionText.innerHTML = this.alt;
+        });
+      });
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function () {
+        modal.style.display = "none";
+      };
+
+      // Also close modal if user clicks outside the image area
+      modal.addEventListener("click", function (e) {
+        if (e.target === modal) {
+          modal.style.display = "none";
+        }
+      });
     </script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-</body>
+  </body>
 </html>
